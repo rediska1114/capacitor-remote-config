@@ -1,4 +1,4 @@
-package com.rediska1114.plugins.remoteconfig;
+package com.rediska1114.plugins.firebase;
 
 import com.getcapacitor.JSObject;
 import com.getcapacitor.NativePlugin;
