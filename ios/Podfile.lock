@@ -2,8 +2,6 @@ PODS:
   - Capacitor (2.4.7):
     - CapacitorCordova
   - CapacitorCordova (2.4.7)
-  - Firebase/Analytics (8.6.1):
-    - Firebase/Core
   - Firebase/Core (8.6.1):
     - Firebase/CoreOnly
     - FirebaseAnalytics (~> 8.6.0)
@@ -98,7 +96,7 @@ PODS:
 DEPENDENCIES:
   - "Capacitor (from `../node_modules/@capacitor/ios`)"
   - "CapacitorCordova (from `../node_modules/@capacitor/ios`)"
-  - Firebase/Analytics (~> 8.6)
+  - Firebase/Core (~> 8.6)
   - Firebase/RemoteConfig (~> 8.6)
 
 SPEC REPOS:
@@ -138,6 +136,6 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 68159ce6952d93e17b2dfe273b8c40907db5ba58
 
-PODFILE CHECKSUM: ea2e79e18d886fb8a6599c6d34dddce718764536
+PODFILE CHECKSUM: 98b1f70e2daccd2d7b358d1fe058265c1b2b124b
 
 COCOAPODS: 1.10.1

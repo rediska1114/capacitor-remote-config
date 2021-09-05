@@ -5,7 +5,7 @@ def capacitor_pods
   use_frameworks!
   pod 'Capacitor', :path => '../node_modules/@capacitor/ios'
   pod 'CapacitorCordova', :path => '../node_modules/@capacitor/ios'
-  pod 'Firebase/Analytics', '~> 8.6'
+  pod 'Firebase/Core', '~> 8.6'
   pod 'Firebase/RemoteConfig', '~> 8.6'
 end
 
