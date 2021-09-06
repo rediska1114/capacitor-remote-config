@@ -26,4 +26,5 @@ export interface CapacitorRemoteConfigPlugin {
   getBoolean(options: IGetParamOptions): Promise<IResult<boolean>>;
   getNumber(options: IGetParamOptions): Promise<IResult<number>>;
   getString(options: IGetParamOptions): Promise<IResult<string>>;
+  getJSON<T = object>(options: IGetParamOptions): Promise<IResult<T>>;
 }

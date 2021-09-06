@@ -11,4 +11,5 @@ CAP_PLUGIN(CapacitorRemoteConfig, "CapacitorRemoteConfig",
            CAP_PLUGIN_METHOD(getBoolean, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(getNumber, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(getString, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getJSON, CAPPluginReturnPromise);
 )

@@ -22,4 +22,7 @@ export class RemoteConfig {
   getString(key: string) {
     return this.remoteConfig.getString({ key });
   }
+  getJSON(key: string) {
+    return this.remoteConfig.getJSON({ key });
+  }
 }

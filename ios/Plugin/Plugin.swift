@@ -1,7 +1,7 @@
 import Capacitor
-import Foundation
 import FirebaseCore
 import FirebaseRemoteConfig
+import Foundation
 /**
  * Please read the Capacitor iOS Plugin Development Guide
  * here: https://capacitorjs.com/docs/plugins/ios
@@ -102,6 +102,20 @@ public class CapacitorRemoteConfig: CAPPlugin {
     }
 
     let value = remoteConfig?.configValue(forKey: key).stringValue
+    let source = remoteConfig?.configValue(forKey: key).source
+    call.resolve([
+      "key": key as String,
+      "value": value!,
+      "source": source!.rawValue as Int,
+    ])
+  }
+
+  @objc func getJSON(_ call: CAPPluginCall) {
+    guard let key = call.getString("key") else {
+      return call.reject("Missing key option")
+    }
+
+    let value = remoteConfig?.configValue(forKey: key).jsonValue
     let source = remoteConfig?.configValue(forKey: key).source
     call.resolve([
       "key": key as String,
