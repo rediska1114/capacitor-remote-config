@@ -77,7 +77,7 @@ public class CapacitorRemoteConfig: CAPPlugin {
     let source = remoteConfig?.configValue(forKey: key).source
     call.resolve([
       "key": key as String,
-      "value": value! as Bool,
+      "value": value as Any,
       "source": source!.rawValue as Int,
     ])
   }
@@ -91,7 +91,7 @@ public class CapacitorRemoteConfig: CAPPlugin {
     let source = remoteConfig?.configValue(forKey: key).source
     call.resolve([
       "key": key as String,
-      "value": value!,
+      "value": value as Any,
       "source": source!.rawValue as Int,
     ])
   }
@@ -105,7 +105,7 @@ public class CapacitorRemoteConfig: CAPPlugin {
     let source = remoteConfig?.configValue(forKey: key).source
     call.resolve([
       "key": key as String,
-      "value": value!,
+      "value": value as Any,
       "source": source!.rawValue as Int,
     ])
   }
@@ -119,7 +119,7 @@ public class CapacitorRemoteConfig: CAPPlugin {
     let source = remoteConfig?.configValue(forKey: key).source
     call.resolve([
       "key": key as String,
-      "value": value!,
+      "value": value as Any,
       "source": source!.rawValue as Int,
     ])
   }
