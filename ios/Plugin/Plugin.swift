@@ -15,15 +15,14 @@ public class CapacitorRemoteConfig: CAPPlugin {
       FirebaseApp.configure()
     }
 
+    let fileName = getConfigValue("defaultConfigFilePath") as? String ?? "FirebaseRemoteConfigDefaults"
+
+    if Bundle.main.path(forResource: fileName, ofType: "plist") != nil {
+      remoteConfig?.setDefaults(fromPlist: fileName)
+    }
+
     if remoteConfig == nil {
       remoteConfig = RemoteConfig.remoteConfig()
-
-      let standardUserDefaults = UserDefaults.standard
-      let remoteConfigDefaults = standardUserDefaults.object(forKey: "FirebaseRemoteConfigDefaults".lowercased())
-
-      if remoteConfigDefaults != nil {
-        remoteConfig?.setDefaults(fromPlist: remoteConfigDefaults as? String)
-      }
     }
   }
 
