@@ -2,12 +2,11 @@ import Capacitor
 import FirebaseCore
 import FirebaseRemoteConfig
 import Foundation
-/**
- * Please read the Capacitor iOS Plugin Development Guide
- * here: https://capacitorjs.com/docs/plugins/ios
- */
-@objc(CapacitorRemoteConfig)
-public class CapacitorRemoteConfig: CAPPlugin {
+
+/// Please read the Capacitor iOS Plugin Development Guide
+/// here: https://capacitorjs.com/docs/plugins/ios
+@objc(RemoteConfigPlugin)
+public class RemoteConfigPlugin: CAPPlugin {
   var remoteConfig: RemoteConfig?
 
   override public func load() {
@@ -15,7 +14,8 @@ public class CapacitorRemoteConfig: CAPPlugin {
       FirebaseApp.configure()
     }
 
-    let fileName = getConfigValue("defaultConfigFilePath") as? String ?? "FirebaseRemoteConfigDefaults"
+    let fileName =
+      getConfigValue("defaultConfigFilePath") as? String ?? "FirebaseRemoteConfigDefaults"
 
     if Bundle.main.path(forResource: fileName, ofType: "plist") != nil {
       remoteConfig?.setDefaults(fromPlist: fileName)

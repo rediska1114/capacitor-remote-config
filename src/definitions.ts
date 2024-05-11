@@ -1,30 +1,24 @@
-declare global {
-  interface PluginRegistry {
-    CapacitorRemoteConfig: CapacitorRemoteConfigPlugin;
-  }
-}
-
-export interface IResult<T> {
+export interface Result<T> {
   key: string;
   value: T;
   source: number;
 }
 
-export interface IInitializeOptions {
+export interface InitializeOptions {
   minimumFetchIntervalInSeconds: number;
 }
 
-export interface IGetParamOptions {
+export interface GetParamOptions {
   key: string;
 }
 
-export interface CapacitorRemoteConfigPlugin {
-  initialize(options: IInitializeOptions): Promise<void>;
+export interface RemoteConfigPlugin {
+  initialize(options: InitializeOptions): Promise<void>;
   fetch(): Promise<void>;
   activate(): Promise<void>;
   fetchAndActivate(): Promise<void>;
-  getBoolean(options: IGetParamOptions): Promise<IResult<boolean>>;
-  getNumber(options: IGetParamOptions): Promise<IResult<number>>;
-  getString(options: IGetParamOptions): Promise<IResult<string>>;
-  getJSON<T = object>(options: IGetParamOptions): Promise<IResult<T>>;
+  getBoolean(options: GetParamOptions): Promise<Result<boolean>>;
+  getNumber(options: GetParamOptions): Promise<Result<number>>;
+  getString(options: GetParamOptions): Promise<Result<string>>;
+  getJSON<T = object>(options: GetParamOptions): Promise<Result<T>>;
 }
