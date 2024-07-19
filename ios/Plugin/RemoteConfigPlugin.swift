@@ -114,7 +114,7 @@ public class RemoteConfigPlugin: CAPPlugin {
       return call.reject("Missing key option")
     }
 
-    let value = remoteConfig?.configValue(forKey: key).jsonValue
+    let value = remoteConfig?.configValue(forKey: key).stringValue
     let source = remoteConfig?.configValue(forKey: key).source
     call.resolve([
       "key": key as String,
@@ -123,7 +123,4 @@ public class RemoteConfigPlugin: CAPPlugin {
     ])
   }
 
-  // @objc func getByteArray(_ call: CAPPluginCall) {
-  //   call.resolve()
-  // }
 }

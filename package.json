@@ -1,6 +1,6 @@
 {
   "name": "capacitor-remote-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Firebase Remote Config plugin for capacitor",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -69,6 +69,9 @@
   "capacitor": {
     "ios": {
       "src": "ios"
+    },
+    "android": {
+      "src": "android"
     }
   }
 }

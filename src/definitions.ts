@@ -20,5 +20,5 @@ export interface RemoteConfigPlugin {
   getBoolean(options: GetParamOptions): Promise<Result<boolean>>;
   getNumber(options: GetParamOptions): Promise<Result<number>>;
   getString(options: GetParamOptions): Promise<Result<string>>;
-  getJSON<T = object>(options: GetParamOptions): Promise<Result<T>>;
+  getJSON(options: GetParamOptions): Promise<Result<string>>;
 }

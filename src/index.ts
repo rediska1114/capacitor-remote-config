@@ -26,8 +26,23 @@ export class RemoteConfig {
   getString(key: string) {
     return this.remoteConfig.getString({ key });
   }
-  getJSON<T = object>(key: string) {
-    return this.remoteConfig.getJSON<T>({ key });
+  async getJSON<T = object>(key: string) {
+    const result = await this.remoteConfig.getJSON({ key });
+
+    const { value, ...rest } = result;
+
+    let jsonObj: T = {} as T;
+
+    try {
+      jsonObj = JSON.parse(value) as T;
+    } catch (e) {
+      console.error(e);
+    }
+
+    return {
+      ...rest,
+      value: jsonObj,
+    };
   }
 }
 
